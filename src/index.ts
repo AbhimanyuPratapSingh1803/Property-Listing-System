@@ -20,13 +20,13 @@ app.get("/", (req, res) => {
   res.json("Hello Welcome to Property Listing System!!!");
 });
 
-// connectRedis()
-// .then(() => {
-//     console.log("Redis Connected");
-// })
-// .catch((error) => {
-//     console.log("Redis connection failed : ", error);
-// })
+connectRedis()
+.then(() => {
+    console.log("Redis Connected");
+})
+.catch((error) => {
+    console.log("Redis connection failed : ", error);
+})
 connectDB()
 .then(() => {
     console.log("MongoDB Connected");
