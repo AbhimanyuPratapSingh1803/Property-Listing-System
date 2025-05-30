@@ -13,27 +13,27 @@ app.use(cors({
   credentials: true,
 }))
 
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port : ${process.env.PORT}`);
+})
+app.get("/", (req, res) => {
+  res.json("Hello Welcome to Property Listing System!!!");
+});
+
 connectRedis()
 .then(() => {
-    // app.listen(process.env.PORT || 8000, () => {
-    //     console.log(`Redis connected and Server is listening on port : ${process.env.PORT}`);
-    // })
+    console.log("Redis Connected");
 })
 .catch((error) => {
     console.log("Redis connection failed : ", error);
 })
 connectDB()
 .then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log(`Server is running on port : ${process.env.PORT}`);
-    })
+    console.log("MongoDB Connected");
 })
 .catch((error) => {
     console.log("MongoDB connection failed : ", error);
 })
-// app.get("/", (req, res) => {
-//   res.json("Hello Welcome to Property Listing System!!!");
-// });
 
 app.use(express.json({limit : "16kb"}));
 app.use(cookieParser());
