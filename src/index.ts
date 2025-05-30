@@ -24,16 +24,16 @@ connectRedis()
 })
 connectDB()
 .then(() => {
-    app.listen(process.env.PORT || 4000, () => {
+    app.listen(process.env.PORT, () => {
         console.log(`Server is running on port : ${process.env.PORT}`);
     })
 })
 .catch((error) => {
     console.log("MongoDB connection failed : ", error);
 })
-app.get("/", (req, res) => {
-  res.json("Hello Welcome to Property Listing System!!!");
-});
+// app.get("/", (req, res) => {
+//   res.json("Hello Welcome to Property Listing System!!!");
+// });
 
 app.use(express.json({limit : "16kb"}));
 app.use(cookieParser());
