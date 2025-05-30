@@ -95,7 +95,7 @@ const fetchProperties = asyncHandler(async (req, res) => {
 
   }
 
-  const properties = await Property.find(filter);
+  const properties = await Property.find(filter).limit(10);
   if (!properties) {
     res.status(400).json({
       message: "Error getting properties.",
