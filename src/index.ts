@@ -24,8 +24,8 @@ connectRedis()
 })
 connectDB()
 .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
-        console.log(`MongoDb connected and Server is listening on port : ${process.env.PORT}`);
+    app.listen(process.env.PORT || 4000, () => {
+        console.log(`Server is running on port : ${process.env.PORT}`);
     })
 })
 .catch((error) => {
