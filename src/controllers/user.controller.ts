@@ -1,9 +1,8 @@
 import { asyncHandler } from "../utils/asyncHandler";
 import { User, IUser } from "../models/user";
 import { Property, IProperty } from "../models/property";
-import mongoose, { SaveOptions, HydratedDocument,Types } from "mongoose";
+import { HydratedDocument,Types } from "mongoose";
 import { CookieOptions } from "express";
-import jwt from "jsonwebtoken"
 
 const createAccessAndRefreshTokens = async (userId: Types.ObjectId) => {
   const user = await User.findById(userId) as HydratedDocument<IUser> | null;
