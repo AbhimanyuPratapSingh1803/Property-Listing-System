@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "ts",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node src/index.ts"
+  "exec": "ts-node --max-old-space-size=512 src/index.ts"
 }
